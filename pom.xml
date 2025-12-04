@@ -13,6 +13,14 @@
         <javafx.version>18.0.1</javafx.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>localrep</id>
+            <name>local repository</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    </repositories>
+
     <dependencies>
 
         <dependency>
@@ -45,7 +53,7 @@
         <resources>
             <resource>
                 <directory>${project.build.directory}/lib</directory>
-                <targetPath>lib/</targetPath>
+                <targetPath>lib</targetPath>
             </resource>
         </resources>
 
@@ -63,7 +71,7 @@
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <file>${project.basedir}/lib/desktop-game-engine.jar</file>
+                            <file>lib/com/javarush/desktop-game-engine/1.0/desktop-game-engine-1.0.jar</file>
                             <groupId>com.javarush</groupId>
                             <artifactId>desktop-game-engine</artifactId>
                             <version>1.0</version>
@@ -89,7 +97,8 @@
                 <version>3.6.1</version>
                 <configuration>
                     <outputDirectory>
-                        ${project.build.directory}/lib</outputDirectory>
+                        ${project.build.directory}/lib
+                    </outputDirectory>
                     <includeScope>compile</includeScope>
                 </configuration>
                 <executions>
